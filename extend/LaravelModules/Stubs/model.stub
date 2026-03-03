@@ -1,0 +1,82 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Model;
+
+class $CLASS$ extends Model
+{
+    use SoftDeletes;
+
+    //为模型指定一个连接名称
+    protected $connection = 'mysql';
+    //与模型关联的数据表
+    protected $table = '$CLASS$';
+
+    //执行模型是否自动维护时间戳
+    public $timestamps = true;
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+
+    //白名单: 指定哪些属性可以被集体赋值
+    protected $fillable = $FILLABLE$;
+
+    //黑名单:不被允许集体赋值
+    protected $guarded = [
+        "id"
+    ];
+
+    //字段设置类型自动转换
+    protected $casts = [
+        'id' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
+    ];
+
+    protected $dates = [
+        "created_at",
+        "updated_at",
+        "deleted_at",
+    ];
+
+    //模型事件
+    public static function boot(){
+        parent::boot();
+
+        //匿名的全局作用域
+        static::addGlobalScope('base',function($query){ });
+
+        //获取到模型实例后触发
+        static::retrieved(function($input){ });
+        //插入到数据库前触发
+        static::creating(function($input){ });
+        //插入到数据库后触发
+        static::created(function($input){ });
+        //更新到数据库前触发
+        static::updating(function($input){ });
+        //更新到数据库后触发
+        static::updated(function($input){ });
+        //保存到数据库前触发（插入/更新之前，无论插入还是更新都会触发）
+        static::saving(function($input){ });
+        //保存到数据库后触发（插入/更新之后，无论插入还是更新都会触发）
+        static::saved(function($input){ });
+        //从数据库删除记录前触发
+        static::deleting(function($input){ });
+        //从数据库删除记录后触发
+        static::deleted(function($input){ });
+        //恢复软删除记录前触发
+        //static::restoring(function($input){ });
+        //恢复软删除记录后触发
+        //static::restored(function($input){ });
+
+    }
+
+    //关联预载入模型
+    //public function SomeModelName(){
+    //    $fields = ['id','name'];
+    //    return $this->belongsTo(SomeModelName::class, 'foreign_key_id', 'owner_key_id')->select($fields);
+    //}
+
+}

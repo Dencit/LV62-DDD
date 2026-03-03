@@ -1,0 +1,1 @@
+<?phpnamespace Modules\Admin\Enums;/** * notes: 数据单元常量 * Class AdminEnum * @package Modules\Admin\Enums */class AdminEnum{    const DISABLE_STATUS = 1;    const ENABLE_STATUS  = 2;}

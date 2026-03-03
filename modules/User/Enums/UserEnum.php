@@ -1,0 +1,1 @@
+<?phpnamespace Modules\User\Enums;/** * notes: 数据单元常量 * Class UserEnum * @package Modules\User\Enums */class UserEnum{    const DISABLE_STATUS = 1;    const ENABLE_STATUS  = 2;}

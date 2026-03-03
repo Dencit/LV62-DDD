@@ -1,0 +1,77 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+
+class $CLASS$ extends ServiceProvider
+{
+    /**
+     * The module namespace to assume when generating URLs to actions.
+     *
+     * @var string
+     */
+    protected $moduleNamespace = '';
+
+    /**
+     * Called before routes are registered.
+     *
+     * Register any model bindings or pattern based filters.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        parent::boot();
+    }
+
+    /**
+     * Define the routes for the application.
+     *
+     * @return void
+     */
+    public function map()
+    {
+        $this->mapCrossRoutes();
+        $this->mapClientRoutes();
+        $this->mapPlatformRoutes();
+    }
+
+    /**
+     * Define the "cross api" routes for the application.
+     * These routes are typically stateless.
+     * @return void
+     */
+    protected function mapCrossRoutes()
+    {
+        Route::prefix('')
+            ->middleware('api')
+            ->namespace($this->moduleNamespace)
+            ->group(module_path('$MODULE$', '/Ports/Cross/api.php'));
+    }
+    /**
+     * Define the "customer api" routes for the application.
+     * These routes are typically stateless.
+     * @return void
+     */
+    protected function mapClientRoutes()
+    {
+        Route::prefix('')
+            ->middleware('api')
+            ->namespace($this->moduleNamespace)
+            ->group(module_path('$MODULE$', '/Ports/Client/api.php'));
+    }
+    /**
+     * Define the "platform api" routes for the application.
+     * These routes are typically stateless.
+     * @return void
+     */
+    protected function mapPlatformRoutes()
+    {
+        Route::prefix('')
+            ->middleware('api')
+            ->namespace($this->moduleNamespace)
+            ->group(module_path('$MODULE$', '/Ports/Platform/api.php'));
+    }
+}

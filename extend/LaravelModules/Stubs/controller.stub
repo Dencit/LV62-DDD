@@ -1,0 +1,59 @@
+<?php
+
+namespace $CLASS_NAMESPACE$;
+
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+
+class $CLASS$ extends Controller
+{
+    /*
+     * 新增数据 - 模板
+     */
+    public function sampleCreate(Request $request){
+        return null;
+    }
+
+    /*
+     * 批量新增数据 - 模板
+     */
+    public function sampleBatchCreate(Request $request){
+        return null;
+    }
+
+    /*
+     * 根据 主键id 更新详情 - 模板
+     */
+    public function sampleUpdate(Request $request,$id){
+        return null;
+    }
+
+    /*
+     * 根据 主键id 批量更新 - 模板
+     */
+    public function sampleBatchUpdate(Request $request){
+        return null;
+    }
+
+    /*
+     * 列表筛选 - 模板
+     */
+    public function sampleCollect(){
+        return null;
+    }
+
+    /*
+     * 根据 主键id 获取详情 - 模板
+     */
+    public function sampleDetail(Request $request,$id){
+        return null;
+    }
+
+    /*
+     * 根据 主键id 删除详情 - 模板
+     */
+    public function sampleDelete(Request $request,$id){
+        return null;
+    }
+
+}

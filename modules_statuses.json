@@ -1,0 +1,8 @@
+{
+  "Demo": true,
+  "Test": true,
+  "Media": true,
+  "Oauth": true,
+  "User": true,
+  "Admin": true
+}

@@ -1,0 +1,28 @@
+<?php
+
+namespace $MODULE_NAMESPACE$\$STUDLY_NAME$\Config\Errors;
+
+use Domain\Base\Exception\BaseError;
+
+/*
+ * notes: 错误码
+ */
+class Error extends BaseError{
+
+    protected static $data = [
+        "ID_NOT_FOUND"         => ['code' => 200000, 'msg' => 'ID 不存在'],
+        "ID_NOT_UNIQUE"        => ['code' => 200001, 'msg' => 'ID 已存在'],
+        "BATCH_IDS_NOT_FOUND"  => ['code' => 200002, 'msg' => '批量数据中 有ID不存在'],
+        "BATCH_IDS_NOT_UNIQUE" => ['code' => 200003, 'msg' => '批量数据中 有ID已存在'],
+    ];
+
+    static function code($type){
+       return self::$data[$type]['code'];
+    }
+
+    static function msg($type){
+        return self::$data[$type]['msg'];
+    }
+
+}
+

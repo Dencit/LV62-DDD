@@ -1,0 +1,12 @@
+<?php
+
+namespace $MODULE_NAMESPACE$\$STUDLY_NAME$\Config\Enums;
+
+/*
+ * notes: 常量
+ */
+class Enum
+{
+    const DISABLE_STATUS = 1;
+    const ENABLE_STATUS = 2;
+}

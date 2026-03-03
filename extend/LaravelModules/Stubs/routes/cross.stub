@@ -1,0 +1,29 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+//开放权限
+Route::prefix('$LOWER_NAME$/cross')->group(function(){
+
+    //只对测试开放-正式接口不要放这里
+    if(config('app.debug')) {
+
+        //-新增
+        //Route::post('/sample/add', SampleController::class.'@sampleCreate');
+        //-获取-列表
+        //Route::get('/sample/list',SampleController::class.'@sampleCollect');
+        //-获取-详情
+        //Route::get('/sample/{id}', SampleController::class.'@sampleDetail')->where(['id'=>'\d+']);
+        //-更新-详情
+        //Route::put('/sample/{id}', SampleController::class.'@sampleUpdate')->where(['id'=>'\d+']);
+        //-删除-详情
+        //Route::delete('/sample/{id}',SampleController::class.'@sampleDelete')->where(['id'=>'\d+']);
+
+        //-批量新增
+        //Route::post('/sample/batch-in',SampleController::class.'@sampleBatchCreate');
+        //-批量更新
+        //Route::put('/sample/batch-up', SampleController::class.'@sampleBatchUpdate');
+
+    }
+
+});

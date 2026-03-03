@@ -1,0 +1,1 @@
+<?phpnamespace Modules\Media\Enums;/** * notes: 数据单元常量 * Class MediaImageEnum * @package Modules\Media\Enums */class MediaImageEnum{    const DISABLE_STATUS = 1;    const ENABLE_STATUS  = 2;    const AVATAR_IMAGE_TYPE = 1;    const COVER_IMAGE_TYPE  = 2;}

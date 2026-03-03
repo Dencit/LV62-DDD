@@ -1,0 +1,1 @@
+<?phpnamespace Modules\Demo\Enums;/** * notes: 数据单元常量 * Class EsSampleEnum * @package Modules\Demo\Config */class EsSampleEnum{    const TABLE = 'es_sample'; //索引表名    const VERSION = 0; //对外接口-索引表版本号    const TASK_VERSION = 0; //数据清洗-索引表版本号}

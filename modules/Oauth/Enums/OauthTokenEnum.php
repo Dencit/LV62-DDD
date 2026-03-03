@@ -1,0 +1,1 @@
+<?phpnamespace Modules\Oauth\Enums;/** * notes: 数据单元常量 * Class OauthTokenEnum * @package Modules\Oauth\Enums */class OauthTokenEnum{    const DISABLE_STATUS = 1;    const ENABLE_STATUS  = 2;}
